@@ -1,21 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-01T22:35:32 SGT" name="Default suite" finished-at="2024-12-01T22:35:49 SGT" duration-ms="16970">
+  <suite started-at="2024-12-01T23:24:00 SGT" name="Default suite" finished-at="2024-12-01T23:25:33 SGT" duration-ms="93478">
     <groups>
     </groups>
-    <test started-at="2024-12-01T22:35:32 SGT" name="Default test" finished-at="2024-12-01T22:35:49 SGT" duration-ms="16970">
+    <test started-at="2024-12-01T23:24:00 SGT" name="Default test" finished-at="2024-12-01T23:25:33 SGT" duration-ms="93478">
       <class name="Tests.TodoTests">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Tests.TodoTests@6cc558c6]" started-at="2024-12-01T22:35:32 SGT" name="setUp" finished-at="2024-12-01T22:35:35 SGT" duration-ms="2725" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Tests.TodoTests@6cc558c6]" started-at="2024-12-01T23:24:00 SGT" name="setUp" finished-at="2024-12-01T23:24:03 SGT" duration-ms="3159" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testEditTodo()[pri:1, instance:Tests.TodoTests@6cc558c6]" started-at="2024-12-01T22:35:35 SGT" name="testEditTodo" finished-at="2024-12-01T22:35:48 SGT" duration-ms="13193" status="PASS">
+        <test-method signature="testEditTodo()[pri:1, instance:Tests.TodoTests@6cc558c6]" started-at="2024-12-01T23:24:03 SGT" name="testEditTodo" finished-at="2024-12-01T23:24:16 SGT" duration-ms="13104" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testEditTodo -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.TodoTests@6cc558c6]" started-at="2024-12-01T22:35:48 SGT" name="tearDown" finished-at="2024-12-01T22:35:49 SGT" duration-ms="1008" status="PASS">
+        <test-method signature="testAddTodo()[pri:2, instance:Tests.TodoTests@6cc558c6]" started-at="2024-12-01T23:24:16 SGT" name="testAddTodo" finished-at="2024-12-01T23:24:22 SGT" duration-ms="5630" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddTodo -->
+        <test-method signature="testMarkTodoCompleted()[pri:3, instance:Tests.TodoTests@6cc558c6]" started-at="2024-12-01T23:24:22 SGT" name="testMarkTodoCompleted" finished-at="2024-12-01T23:24:28 SGT" duration-ms="6008" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMarkTodoCompleted -->
+        <test-method signature="testDeleteTodo()[pri:4, instance:Tests.TodoTests@6cc558c6]" started-at="2024-12-01T23:24:28 SGT" name="testDeleteTodo" finished-at="2024-12-01T23:24:34 SGT" duration-ms="5644" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteTodo -->
+        <test-method signature="testEmptyTodoTest()[pri:5, instance:Tests.TodoTests@6cc558c6]" started-at="2024-12-01T23:24:34 SGT" name="testEmptyTodoTest" finished-at="2024-12-01T23:24:34 SGT" duration-ms="234" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEmptyTodoTest -->
+        <test-method signature="testVerifyClearCompleted()[pri:6, instance:Tests.TodoTests@6cc558c6]" started-at="2024-12-01T23:24:34 SGT" name="testVerifyClearCompleted" finished-at="2024-12-01T23:25:06 SGT" duration-ms="31796" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testVerifyClearCompleted -->
+        <test-method signature="testFilterTodos()[pri:7, instance:Tests.TodoTests@6cc558c6]" started-at="2024-12-01T23:25:06 SGT" name="testFilterTodos" finished-at="2024-12-01T23:25:32 SGT" duration-ms="26853" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFilterTodos -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.TodoTests@6cc558c6]" started-at="2024-12-01T23:25:32 SGT" name="tearDown" finished-at="2024-12-01T23:25:33 SGT" duration-ms="995" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
