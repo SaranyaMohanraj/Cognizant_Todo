@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TodoMVC Test Suite">
+    <listeners>
+        <listener class-name="TestReportListener" />
+    </listeners>
+    <test name="Todo Tests">
+        <classes>
+            <class name="AddTodoDataDrivenTest" />
+            <class name="FilterTodoTest" />
+        </classes>
+    </test>
+</suite>

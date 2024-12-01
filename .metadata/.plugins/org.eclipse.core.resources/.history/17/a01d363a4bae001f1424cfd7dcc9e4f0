@@ -1,0 +1,8 @@
+
+<suite name="TodoMVC Test Suite"> 
+    <test name="Todo Tests">
+        <classes>
+            <class name="BaseTestClass" />
+        </classes>
+    </test>
+</suite>

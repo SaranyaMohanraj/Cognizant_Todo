@@ -1,0 +1,113 @@
+package Tests;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentTest;
+
+public class TodoTests extends BaseTestClass {
+    @Test  (priority = 1)
+    public void AddTodo() throws InterruptedException
+    {    	  
+    	  ExtentTest test = extent.createTest("AddTodo");
+    	  WebElement inputBox = driver.findElement(By.className("new-todo"));
+          String todoText = "Learn Selenium";
+
+          
+          // Add a todo
+          inputBox.sendKeys(todoText + "\n");        
+          // Verify the todo is added
+          WebElement todoItem = driver.findElement(By.xpath("//label[text()='" + todoText + "']"));
+          Assert.assertTrue(todoItem.isDisplayed(), "Todo item was added successfully!");
+          test.pass("Todo item was added successfully!");
+          Thread.sleep(20000);
+        
+    
+    }
+    @Test  (priority = 2)
+    public void MarkTodoCompleted() {
+    	ExtentTest test = extent.createTest("MarkTodoCompleted");
+        WebElement checkbox = driver.findElement(By.cssSelector("input.toggle"));
+        checkbox.click();
+
+        // Verify the todo is marked as completed
+        WebElement completedTodo = driver.findElement(By.cssSelector("li.completed"));
+        Assert.assertTrue(completedTodo.isDisplayed(), "Todo was marked as completed!");
+        test.pass("Todo was not marked as completed!");
+        Thread.sleep(20000);
+    }
+    
+    @Test  (priority = 3)
+    public void testDeleteTodo() {
+    	ExtentTest test = extent.createTest("DeleteTodo");
+        WebElement deleteButton = driver.findElement(By.cssSelector("button.destroy"));
+        deleteButton.click();
+
+        // Verify the todo is deleted
+        int remainingTodos = driver.findElements(By.cssSelector("ul.todo-list li")).size();
+        Assert.assertEquals(remainingTodos, 0, "Todo was deleted successfully!");
+        test.pass("Todo was deleted!");
+        Thread.sleep(20000);
+    }
+    
+    
+    @Test (priority = 4)
+    public void testFilterTodos() {
+    	ExtentTest test = extent.createTest("FilterTodos");
+        // Add an active todo
+        WebElement inputBox = driver.findElement(By.className("new-todo"));
+        inputBox.sendKeys("Active Todo\n");
+
+        // Filter Active Todos
+        driver.findElement(By.linkText("Active")).click();
+        int activeCount = driver.findElements(By.cssSelector("ul.todo-list li")).size();
+        Assert.assertEquals(activeCount, 1, "Active todos filtering Passed!");
+
+        // Filter Completed Todos
+        driver.findElement(By.linkText("Completed")).click();
+        int completedCount = driver.findElements(By.cssSelector("ul.todo-list li")).size();
+        Assert.assertEquals(completedCount, 0, "Completed todos filtering Passed!");
+        test.pass("Completed todos filtering!");
+        Thread.sleep(20000);
+    }
+    
+    @Test  (priority = 5)
+    public void testEditTodo() throws InterruptedException {
+    	ExtentTest test = extent.createTest("EditTodo");
+        String initialTodo = "Learn Selenium";
+        String updatedTodo = "Master Selenium";
+
+        // Add a new todo
+        WebElement inputBox = driver.findElement(By.className("new-todo"));
+        inputBox.sendKeys(initialTodo + "\n");
+
+        Thread.sleep(20000);
+        // Verify the todo is added
+        WebElement todoItem = driver.findElement(By.xpath("//label[text()='" + initialTodo + "']"));
+        Assert.assertTrue(todoItem.isDisplayed(), "Todo item was not added successfully!");
+
+        Thread.sleep(20000);
+        // Double-click to edit the todo
+        Actions actions = new Actions(driver);
+        actions.doubleClick(todoItem).perform();
+
+        // Find the editable input and update the text
+        WebElement editInput = driver.findElement(By.cssSelector("li.editing .edit"));
+        editInput.clear();
+        editInput.sendKeys(updatedTodo);
+        editInput.sendKeys(Keys.ENTER);
+      
+
+        // Verify the todo text is updated
+        WebElement updatedTodoItem = driver.findElement(By.xpath("//label[text()='" + updatedTodo + "']"));
+        Assert.assertTrue(updatedTodoItem.isDisplayed(), "Todo item was not updated successfully!");
+
+        System.out.println("Test for editing todo passed!");
+        test.pass("Test for editing todo passed!");
+    }
+
+}
+		

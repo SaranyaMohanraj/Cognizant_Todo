@@ -1,0 +1,9 @@
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TodoMVC Test Suite"> 
+    <test name="Todo Tests">
+        <classes>
+            <class name="BaseTestClass" />
+        </classes>
+    </test>
+</suite>

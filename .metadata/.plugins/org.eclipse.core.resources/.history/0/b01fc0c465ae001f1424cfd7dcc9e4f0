@@ -1,0 +1,28 @@
+package Tests;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentTest;
+
+public class TodoTests extends BaseTestClass {
+    @Test
+    public void AddTodo() throws InterruptedException
+    {    	  
+    	  ExtentTest test = extent.createTest("AddTodo");
+    	  WebElement inputBox = driver.findElement(By.className("new-todo"));
+          String todoText = "Learn1 Selenium";
+        
+          // Add a todo
+          inputBox.sendKeys(todoText + "\n");        
+          // Verify the todo is added
+          WebElement todoItem = driver.findElement(By.xpath("//label[text()='" + todoText + "']"));
+          Assert.assertTrue(todoItem.isDisplayed(), "Todo item was added successfully!");
+          test.pass("Todo item was added successfully!");
+        
+    
+    }
+
+}
+		

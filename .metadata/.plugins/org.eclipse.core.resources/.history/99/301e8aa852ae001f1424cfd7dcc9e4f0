@@ -1,0 +1,53 @@
+package Tests;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import Utils.*;
+
+
+public class BaseTestClass {
+    protected WebDriver driver;
+
+    @BeforeClass
+    public void setUp() {
+        String browser = ConfigReader.getProperty("browser").toLowerCase();
+        String baseUrl = ConfigReader.getProperty("base.url");
+
+        if (browser.equals("chrome")) {
+            System.setProperty("webdriver.chrome.driver", ConfigReader.getProperty("chrome.driver.path"));
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--start-maximized");
+            driver = new ChromeDriver(options);
+        } else if (browser.equals("edge")) {
+            System.setProperty("webdriver.edge.driver", ConfigReader.getProperty("edge.driver.path"));
+            driver = new EdgeDriver();
+        } 
+
+        driver.get(baseUrl);
+    }
+    @Test
+    public void AddTodo() throws InterruptedException
+    {
+    	  WebElement inputBox = driver.findElement(By.className("new-todo"));
+          String todoText = "Learn Selenium";
+
+          // Add a todo
+          inputBox.sendKeys(todoText + "\n");
+
+          // Verify the todo is added
+          WebElement todoItem = driver.findElement(By.xpath("//label[text()='" + todoText + "']"));
+          Assert.assertTrue(todoItem.isDisplayed(), "Todo item was not added successfully!");
+    }
+
+    @AfterClass
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+}

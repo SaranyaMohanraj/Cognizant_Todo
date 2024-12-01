@@ -1,0 +1,11 @@
+package Tests;
+import org.testng.annotations.Test;
+
+public class TodoTests extends BaseTestClass {
+	@Test
+	public void AddTodoTest()
+	{
+	System.out.println(browser);
+	}
+
+}

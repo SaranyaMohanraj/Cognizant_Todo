@@ -1,0 +1,21 @@
+package Utils;
+
+import org.apache.commons.io.FileUtils
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
+import java.io.File;
+import java.io.IOException;
+public class ScreenshotUtil {
+    public static void takeScreenshot(WebDriver driver, String fileName) {
+        // Capture screenshot as a file
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            // Save screenshot to a specified location
+            File.copyFile(screenshot, new File("screenshots/" + fileName + ".png"));
+        } catch (IOException e) {
+            System.out.println("Failed to save screenshot: " + e.getMessage());
+        }
+    }
+}
