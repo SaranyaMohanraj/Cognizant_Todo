@@ -2663,3 +2663,7 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.seleniumh
 2024-12-01 22:32:23,098 [Worker-287: Launching TodoTests] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Saranya\Projects\Cognizant\TodoTestApp\src\main\resources
 2024-12-01 22:32:23,098 [Worker-287: Launching TodoTests] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2024-12-01 22:32:23,099 [Worker-287: Launching TodoTests] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\test\resources to target\test-classes
+2024-12-01 22:35:16,637 [Worker-299: Launching TodoTests] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-12-01 22:35:16,638 [Worker-299: Launching TodoTests] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Saranya\Projects\Cognizant\TodoTestApp\src\main\resources
+2024-12-01 22:35:16,639 [Worker-299: Launching TodoTests] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-12-01 22:35:16,640 [Worker-299: Launching TodoTests] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\test\resources to target\test-classes
